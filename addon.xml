@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.hello.world" name="Hello World" version="1.0.0" provider-name="zag">
+<addon id="script.hello.world" name="Shortlist Context Menu Item" version="1.0.0" provider-name="markchalloner">
     <requires>
-		<import addon="xbmc.python" version="2.14.0"/>
+		<import addon="xbmc.python" version="2.20.0"/>
 	</requires>
+	<extension point="kodi.context.item" library="addon.py">
+        <item>
+            <label>Add to shortlist</label>
+            <visible>!IsEmpty(ListItem.Genre)</visible>
+            <parent></parent>
+        </item>
+    </extension>
+
 	<extension point="xbmc.python.script" library="addon.py">
 		<provides>executable</provides>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">Popup Hello World</summary>
-		<description lang="en">Example Script to show hello world</description>
+		<summary lang="en">Shortlist Context Menu Item</summary>
+		<description lang="en">Adds a context menu item to add an shortlist tag to an item</description>
 		<license>GNU General Public License, v2</license>
 		<language></language>
-		<forum>http://forum.kodi.tv/showthread.php?tid=209948</forum>
-		<source>https://github.com/zag2me/script.hello.world</source>
-		<email>zag@kodi.org</email>
+		<forum></forum>
+		<source>https://github.com/markchalloner/kodi-context-shortlist</source>
+		<email>mark.a.r.challoner@gmail.com</email>
 	</extension>
 </addon>
