@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.hello.world" name="Shortlist Context Menu Item" version="1.0.0" provider-name="markchalloner">
+<addon id="plugin.video.shortlist" name="Shortlist Context Menu Item" version="1.0.0" provider-name="markchalloner">
     <requires>
 		<import addon="xbmc.python" version="2.20.0"/>
 	</requires>
+	
 	<extension point="kodi.context.item" library="addon.py">
         <item>
-            <label>Add to shortlist</label>
-            <visible>!IsEmpty(ListItem.Genre)</visible>
-            <parent></parent>
+            <label>30000</label>
+            <visible>!ListItem.IsFolder + [Container.Content(movies) | Container.Content(tags)]</visible>
         </item>
     </extension>
 
 	<extension point="xbmc.python.script" library="addon.py">
 		<provides>executable</provides>
 	</extension>
+	
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<summary lang="en">Shortlist Context Menu Item</summary>
@@ -24,4 +25,5 @@
 		<source>https://github.com/markchalloner/kodi-context-shortlist</source>
 		<email>mark.a.r.challoner@gmail.com</email>
 	</extension>
+	
 </addon>
