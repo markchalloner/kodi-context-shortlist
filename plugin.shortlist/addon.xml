@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.shortlist" name="Shortlist Context Menu Item" version="1.0.0" provider-name="markchalloner">
+<addon id="plugin.shortlist" name="Movie Shortlist" version="1.0.0" provider-name="markchalloner">
     <requires>
 		<import addon="xbmc.python" version="2.20.0"/>
 	</requires>
@@ -7,18 +7,14 @@
 	<extension point="kodi.context.item" library="addon.py">
         <item>
             <label>30000</label>
-            <visible>!ListItem.IsFolder + [Container.Content(movies) | Container.Content(tags)]</visible>
+            <visible>!ListItem.IsFolder + StringCompare(ListItem.dbtype,movie)</visible>
         </item>
     </extension>
 
-	<extension point="xbmc.python.script" library="addon.py">
-		<provides>executable</provides>
-	</extension>
-	
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
-		<summary lang="en">Shortlist Context Menu Item</summary>
-		<description lang="en">Adds a context menu item to add an shortlist tag to an item</description>
+		<summary lang="en_gb">Movie Shortlist</summary>
+		<description lang="en_gb">Shortlist context menu allowing addition and removal of a shortlist tag</description>
 		<license>GNU General Public License, v2</license>
 		<language></language>
 		<forum></forum>
